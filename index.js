@@ -8,7 +8,7 @@ import { createInterface } from 'readline'
 import yargs from 'yargs'
 import chalk from 'chalk'
 
-console.log(chalk.magentaBright('\nIniciando....'))
+console.log(chalk.magentaBright('\nStarting....'))
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const require = createRequire(__dirname)
@@ -33,13 +33,13 @@ async function animarTextoCyberpunk(texto, delay = 65, glitch = true) {
 
 async function barraCargaCyberpunk() {
   const frames = [
-    '[⏳] Invocando grimorios...',
-    '[🔮] Reuniendo maná primitivo...',
-    '[💾] Cargando hechizos prohibidos...',
-    '[⚡] Sincronizando con demonios...',
-    '[🔥] Fusión de magia negra...',
-    '[🌌] Apertura del Reino Oscuro...',
-    '[✅] ASTA-BOT 100% OPERATIVO.'
+    '[⏳] Summoning grimoires...',
+    '[🔮] Gathering primal mana...',
+    '[💾] Loading forbidden spells...',
+    '[⚡] Synchronizing with demons...',
+    '[🔥] Fusing dark magic...',
+    '[🌌] Opening the Dark Realm...',
+    '[✅] IYII bot 100% OPERATIONAL.'
   ]
   for (let frame of frames) {
     process.stdout.write('\r' + chalk.cyanBright(frame))
@@ -52,19 +52,19 @@ async function animacionRobot() {
   const frames = [
     `     🤖
     ╭───╮
-   ( ⚙️_⚙️ )   ACTIVANDO NÚCLEO
+   ( ⚙️_⚙️ )   ACTIVATING CORE
    /|╳╳|\\
     ███
    /   \\`,
     `     🤖
     ╭───╮
-   ( ⚡_⚡ )   CONECTANDO ALMA
+   ( ⚡_⚡ )   CONNECTING SOUL
    /|██|\\
     ███
    /   \\`,
     `     🤖
     ╭───╮
-   ( 😈_😈 )   CARGANDO MEMORIA MÁGICA
+   ( 😈_😈 )   LOADING MAGIC MEMORY
    /|XX|\\
     ███
    /   \\`
@@ -78,47 +78,47 @@ async function animacionRobot() {
 
 async function iniciarBlackClover() {
   console.clear()
-  console.log(chalk.bold.cyanBright('\n⟦ ⌬ ACCESO CONCEDIDO | ASTA-BOT V.777 ⟧'))
-  console.log(chalk.gray('⌬ Canalizando acceso mágico...'))
+  console.log(chalk.bold.cyanBright('\n⟦ ⌬ ACCESS GRANTED | IYII bot V.777 ⟧'))
+  console.log(chalk.gray('⌬ Channeling magical access...'))
   await new Promise(res => setTimeout(res, 600))
 
-  await animarTextoCyberpunk('⌬ Iniciando sistema mágico de combate...', 50, true)
+  await animarTextoCyberpunk('⌬ Initializing magical combat system...', 50, true)
   await new Promise(res => setTimeout(res, 400))
 
   await barraCargaCyberpunk()
   await new Promise(res => setTimeout(res, 500))
 
   console.log(chalk.redBright('\n☰✦☰═☰  B  L  A  C  K    C  L  O  V  E  R  ☰═☰✦☰'))
-  await animarTextoCyberpunk('⚔ Bienvenido al núcleo antimagia...', 60, true)
+  await animarTextoCyberpunk('⚔ Welcome to the anti-magic core...', 60, true)
   console.log(chalk.redBright('☰✦☰════════════════════☰✦☰'))
 
   await new Promise(res => setTimeout(res, 300))
-  await animarTextoCyberpunk('✞ Desarrollado por: The Carlos 👑', 45, false)
+  await animarTextoCyberpunk('✞ Developed by: Iyiola Abifarin👑', 45, false)
   await new Promise(res => setTimeout(res, 600))
 
-  console.log(chalk.yellowBright('\n⟦ ⌬ INICIANDO INTERFAZ ROBÓTICA DE COMBATE ⟧'))
+  console.log(chalk.yellowBright('\n⟦ ⌬ INITIALIZING ROBOTIC COMBAT INTERFACE ⟧'))
   await animacionRobot()
 
-  await animarTextoCyberpunk('\n⌬ ASTA-BOT ha despertado. Todos los hechizos están disponibles.', 40, true)
+  await animarTextoCyberpunk('\n⌬ IYII bot has awakened. All spells are available.', 40, true)
 
-  console.log(chalk.bold.redBright('\n⚠️  ✧ MODO DEMONIO LISTO PARA ACTIVARSE ✧ ⚠️'))
-  await animarTextoCyberpunk('「💢💢¡NO TENGO MAGIA, PERO JAMÁS ME RINDO!💢💢」', 75, true)
+  console.log(chalk.bold.redBright('\n⚠️  ✧ DEMON MODE READY TO ACTIVATE ✧ ⚠️'))
+  await animarTextoCyberpunk('「💢💢I HAVE NO MAGIC, BUT I NEVER GIVE UP!💢💢」', 75, true)
 
-  console.log(chalk.greenBright('\n⌬ Sistema Black Clover totalmente operativo.\n⌬ Esperando órdenes, capitán...\n'))
+  console.log(chalk.greenBright('\n⌬ IYII bot system fully operational.\n⌬ Awaiting orders, captain...\n'))
 
   await new Promise(res => setTimeout(res, 600))
   console.log(chalk.bold.gray('\n⌬═════════════════════════════════⌬'))
-  await animarTextoCyberpunk('⌬ Sistema creado por:', 40, false)
-  await animarTextoCyberpunk('⌬ ★ The Carlos ✞', 80, true)
+  await animarTextoCyberpunk('⌬ System created by:', 40, false)
+  await animarTextoCyberpunk('⌬ ★ Iyiola Abifarin ✞', 80, true)
   console.log(chalk.bold.gray('⌬═════════════════════════════════⌬\n'))
 }
 
 const frases = [
-  '\n✠ Black Clover reiniciado. ⚙️ Cargando sistemas...\n',
-  '\n✠ Reinicio completado. ⚡ Black Clover listo.\n',
-  '\n✠ Sistema Black Clover: ⚙️ Online.\n',
-  '\n✠ Black Clover revive desde las sombras. ⛓️\n',
-  '\n✠ Reboot: Black Clover ⚔️\n'
+  '\n✠ IYII bot restarted. ⚙️ Loading systems...\n',
+  '\n✠ Restart complete. ⚡ Black Clover ready.\n',
+  '\n✠ IYII system: ⚙️ Online.\n',
+  '\n✠ IYII revived from the shadows. ⛓️\n',
+  '\n✠ Reboot: IYII ⚔️\n'
 ]
 
 function fraseAleatoria() {
@@ -162,7 +162,7 @@ function start(file) {
 
 process.on('warning', warning => {
   if (warning.name === 'MaxListenersExceededWarning') {
-    console.warn(chalk.yellow('🚩 Se excedió el límite de Listeners en:'))
+    console.warn(chalk.yellow('🚩 Listener limit exceeded in:'))
     console.warn(warning.stack)
   }
 })
@@ -194,7 +194,7 @@ if (!existsSync(archivoArranque)) {
 ⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⣿⠄⠄⠄⠄⠄⠄⠄⠄
   `))
 
-  writeFileSync(archivoArranque, 'ARRANQUE COMPLETADO')
+  writeFileSync(archivoArranque, 'STARTUP COMPLETED')
 } else {
   console.log(chalk.greenBright(fraseAleatoria()))
 }
