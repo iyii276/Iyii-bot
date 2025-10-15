@@ -1,10 +1,10 @@
-//código creado x The Carlos 👑 
+//Code created by Iyiola Abifarin 
 import fetch from 'node-fetch';
 
 const handler = async (m, { conn, command, usedPrefix }) => {
-  if (!db.data.chats[m.chat].nsfw) throw '[❗] 𝐋𝐨𝐬 𝐜𝐨𝐦𝐚𝐧𝐝𝐨𝐬 +𝟏𝟖 𝐞𝐬𝐭𝐚́𝐧 𝐝𝐞𝐬𝐚𝐜𝐭𝐢𝐯𝐚𝐝𝐨𝐬 𝐞𝐧 𝐞𝐬𝐭𝐞 𝐠𝐫𝐮𝐩𝐨.\n> 𝐬𝐢 𝐞𝐬 𝐚𝐝𝐦𝐢𝐧 𝐲 𝐝𝐞𝐬𝐞𝐚 𝐚𝐜𝐭𝐢𝐯𝐚𝐫𝐥𝐨𝐬 𝐮𝐬𝐞 .enable nsfw';
+  if (!db.data.chats[m.chat].nsfw) throw '[❗] +18 commands are disabled in this group.\n> If you are an admin and wish to enable them, use .enable nsfw';
 
-  conn.reply(m.chat, `🚩 Enviando el *${command}*`, m, {
+  conn.reply(m.chat, `🚩 Sending *${command}*`, m, {
     contextInfo: {
       externalAdReply: {
         mediaUrl: null,
@@ -35,7 +35,7 @@ const handler = async (m, { conn, command, usedPrefix }) => {
     case 'videoxxx':
     case 'vídeoxxx':
       const url4 = global.videosxxxc[Math.floor(Math.random() * global.videosxxxc.length)];
-      conn.sendMessage(m.chat, { video: { url: url4 }, caption: `*ᴅɪsғʀᴜᴛᴀ ᴅᴇʟ ᴠɪᴅᴇᴏ 🥵*` }, { quoted: m });
+      conn.sendMessage(m.chat, { video: { url: url4 }, caption: `*Enjoy the video 🥵*` }, { quoted: m });
       break;
     case 'videoxxxlesbi':
     case 'videolesbixxx':
@@ -45,7 +45,7 @@ const handler = async (m, { conn, command, usedPrefix }) => {
     case 'pornolesbianav':
     case 'pornolesv':
       const url5 = global.videosxxxc2[Math.floor(Math.random() * global.videosxxxc2.length)];
-      conn.sendMessage(m.chat, { video: { url: url5 }, caption: `*ᴅɪsғʀᴜᴛᴀ ᴅᴇʟ ᴠɪᴅᴇᴏ 🥵*` }, { quoted: m });
+      conn.sendMessage(m.chat, { video: { url: url5 }, caption: `*Enjoy the video 🥵*` }, { quoted: m });
       break;
   }
 };
@@ -58,6 +58,7 @@ handler.command = [
 handler.register = true;
 handler.tags = ['nsfw'];
 export default handler;
+
 
 global.pack = [
   'https://telegra.ph/file/957fe4031132ef90b66ec.jpg',
