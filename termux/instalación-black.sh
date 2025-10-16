@@ -15,7 +15,7 @@ pkg install git nodejs ffmpeg imagemagick -y
 
 3. Clona el repositorio del bot:
 
-git clone https://github.com/thecarlos19/black-clover-MD
+git clone https://github.com/iyii276/Iyii-bot
 cd black-clover-MD
 
 
