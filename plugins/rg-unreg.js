@@ -3,16 +3,16 @@ let handler = async function (m, { conn }) {
   
   if (!user.registered) {
     return m.reply(`
-⚠️ *ERROR DE SISTEMA*
-🚫 No estás registrado actualmente.
+⚠️ *SYSTEM ERROR*
+🚫 You are not currently registered.
 `)
   }
 
   user.registered = false
   m.reply(`
-🗡️ *USUARIO ELIMINADO*
-📁 Registro completamente eliminado del sistema...
-⌛ vuelve a registrarte con *.reg* si lo deseas.
+🗡️ *USER DELETED*
+📁 Registration completely removed from the system...
+⌛ Re-register using *.reg* if you wish.
 `)
 }
 
