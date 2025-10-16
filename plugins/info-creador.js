@@ -1,22 +1,22 @@
 import PhoneNumber from 'awesome-phonenumber'
 
 let handler = async (m, { conn, usedPrefix, text, args, command }) => {
-  let nomorown = '5215544876071' // Propietario
-  let bio = (await conn.fetchStatus(nomorown + '@s.whatsapp.net').catch(_ => {}))?.status || 'Propietario del sistema Black Clover'
-  let biobot = (await conn.fetchStatus(conn.user.jid).catch(_ => {}))?.status || 'Bot Oficial Black Clover'
+  let ownerNumber = '2347078226362' // Owner
+  let bio = (await conn.fetchStatus(ownerNumber + '@s.whatsapp.net').catch(_ => {}))?.status || 'Owner of the Black Clover system'
+  let biobot = (await conn.fetchStatus(conn.user.jid).catch(_ => {}))?.status || 'Official Black Clover Bot'
 
   await sendContactArray(conn, m.chat, [
-    [`${nomorown}`, `🥷🏻 Propietario`, `𝐓𝐇𝐄 𝐂𝐀𝐑𝐋𝐎𝐒`, dev, correo, `CDMX`, `${global.yt}`, bio],
-    [`${conn.user.jid.split('@')[0]}`, `Black Clover Bot 🤖`, `${packname}`, `📵 No Hacer Spam`, correo, `CDMX`, md, biobot],
-    [`5217971282613`, `Asistente clover`, `Bot Helper`, 'Soporte', correo, `CDMX`, md, biobot]
+    [`${ownerNumber}`, `🥷🏻 Owner`, `𝐓𝐇𝐄 𝐂𝐀𝐑𝐋𝐎𝐒`, 'Developer', 'support@email.com', `CDMX`, `${global.yt}`, bio],
+    [`${conn.user.jid.split('@')[0]}`, `Black Clover Bot 🤖`, `${packname}`, `📵 No Spamming`, 'support@email.com', `CDMX`, md, biobot],
+    [`2347078226362`, `Clover Assistant`, `Bot Helper`, 'Support', 'support@email.com', `CDMX`, md, biobot]
   ], m)
 
   throw false
 }
 
-handler.help = ["creador","owner"]
+handler.help = ["creator", "owner"]
 handler.tags = ["info"]
-handler.command = ['owner','creador']
+handler.command = ['owner', 'creator']
 export default handler
 
 async function sendContactArray(conn, jid, data, quoted, options) {
@@ -46,7 +46,7 @@ END:VCARD`.trim()
     jid,
     {
       contacts: {
-        displayName: (contacts.length > 1 ? `${contacts.length} contactos` : contacts[0].displayName) || null,
+        displayName: (contacts.length > 1 ? `${contacts.length} contacts` : contacts[0].displayName) || null,
         contacts,
       }
     },
