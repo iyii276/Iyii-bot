@@ -1,39 +1,39 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn }) => {
-  const namegrupo = 'Grupo Oficial'
-  const gp1 = 'https://chat.whatsapp.com/FgQ4q11AjaO8ddyc1LvK4r'
+  const nameGroup = 'Official Group'
+  const groupLink = 'Not Available'
 
-  const namechannel = 'Canal del Bot'
-  const channel = 'https://whatsapp.com/channel/0029Vai28FR7dmea9gytQm3w'
+  const channelName = 'Bot Channel'
+  const channelLink = 'https://whatsapp.com/channel/0029Vb5dgeB4o7qPdEYcc812'
 
-  const dev = '👾 Desarrollador: @thecarlos19'
-  const catalogo = 'https://qu.ax/TJRoN.jpg'
-  const emojis = '📡'
+  const dev = '👾 Developer: Iyiola Abifarin'
+  const catalog = 'https://qu.ax/TJRoN.jpg'
+  const emoji = '📡'
 
-  let grupos = `
-╭─⟪ *🌐 GRUPOS OFICIALES* ⟫
+  let groups = `
+╭─⟪ *🌐 OFFICIAL GROUPS* ⟫
 │
-│ ⚔️ *${namegrupo}*
-│ ${gp1}
+│ ⚔️ *${nameGroup}*
+│ ${groupLink}
 │
-│ ⚡ *${namechannel}*
-│ ${channel}
+│ ⚡ *${channelName}*
+│ ${channelLink}
 │
 │ ${dev}
 ╰─────────────────╯
 `
 
   await conn.sendMessage(m.chat, {
-    image: { url: catalogo },
-    caption: grupos.trim()
+    image: { url: catalog },
+    caption: groups.trim()
   }, { quoted: m })
 
-  await m.react(emojis)
+  await m.react(emoji)
 }
 
-handler.help = ['grupos']
+handler.help = ['groups']
 handler.tags = ['info']
-handler.command = ['grupos', 'links', 'groups']
+handler.command = ['groups', 'links', 'group']
 
 export default handler
