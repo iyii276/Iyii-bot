@@ -6,9 +6,9 @@
 
 ![line](https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif)
 
-**No olvides dejar tu estrellita 🌟**
+**Don't forget to leave your star 🌟**
 
-> 👑 **El mejor Bot de WhatsApp ⚔️**
+> 👑 **The Best WhatsApp Bot ⚔️**
 
 ![line](https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif)
 
@@ -19,64 +19,68 @@
 
 <p align="center">
   <a href="https://wa.me/525544876071">
-    <img title="Autor" src="https://img.shields.io/badge/CARLOS OFC-black?style=for-the-badge&logo=whatsapp">
+    <img title="Author" src="https://img.shields.io/badge/CARLOS OFC-black?style=for-the-badge&logo=whatsapp">
   </a>
   <a href="https://instagram.com/_carlitos.zx">
-    <img title="Instagram del creador" src="https://img.shields.io/badge/@_carlitos.zx-purple?style=for-the-badge&logo=instagram">
+    <img title="Creator's Instagram" src="https://img.shields.io/badge/@_carlitos.zx-purple?style=for-the-badge&logo=instagram">
   </a>
 </p>
 
 ![line](https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif)
 
-### ℹ️ Información importante
+### ℹ️ Important Information
 
 <details>
-<summary><b>📘 ✞ Info Bot</b></summary>
+<summary><b>📘 ✞ Bot Info</b></summary>
 
-* Este proyecto **no está afiliado de ninguna manera** con `WhatsApp`. `WhatsApp` es una marca registrada de `WhatsApp LLC`, y este bot es un **desarrollo independiente** que **no tiene ninguna relación oficial con la compañía**.
+* This project **is not affiliated in any way** with `WhatsApp`. `WhatsApp` is a registered trademark of `WhatsApp LLC`, and this bot is an **independent development** that **has no official relationship with the company**.
 </details>
 
 <details>
-<summary><b>⚙️ ✞ Funciones</b></summary>
+<summary><b>⚙️ ✞ Features</b></summary>
 
-> El bot todavía está en desarrollo. Si presenta alguna falla, repórtala al creador para darle una solución.
+> The bot is still in development. If you encounter any issues, report them to the creator for a solution.
 
-- [x] Interacción con voz y texto
-- [x] Configuración de grupo
+- [x] Voice and text interaction
+- [x] Group configuration  
 - [x] Antidelete, antilink, antispam, etc.
-- [x] Bienvenida personalizada
-- [x] Juegos: tictactoe, matemáticas, etc.
+- [x] Custom welcome
+- [x] Games: tictactoe, math, etc.
 - [x] Chatbot (SimSimi)
 - [x] Chatbot (Auto-responder)
-- [x] Crear sticker de imagen/video/gif/URL
+- [x] Create sticker from image/video/gif/URL
 - [x] SubBot (Jadibot)
-- [x] Buscador Google
-- [x] Juego RPG
-- [x] Personalizar imagen del menú
-- [x] Descarga de música y video de YouTube
-- [ ] Otros en desarrollo
+- [x] Google search
+- [x] RPG game
+- [x] Customize menu image
+- [x] YouTube music and video download
+- [ ] Others in development
 
 </details>
 
 
 ![line](https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif)
 
-🌐 **¡PUEDES INSTALAR EL BOT EN ALGÚN [HOSTING](https://panel2.skyultraplus.com/)!**
+🌐 **YOU CAN INSTALL THE BOT ON SOME [HOSTING](https://panel2.skyultraplus.com/)!**
 
 ![line](https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif)
 
-### 📲 Click en la imagen para obtener Termux
+### 📲 Click on the image to get Termux
 <a href="https://www.mediafire.com/file/3hsvi3xkpq3a64o/termux_118.a">
   <img src="https://qu.ax/finc.jpg" height="125px">
 </a>
 
 ![line](https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif)
 
-### 💻 Instalar por Termux
+### 💻 Install via Termux
 
 <details>
-<summary><b>📲  Ver comandos para Termux</b></summary>
+<summary><b>📲 View Commands for Termux</b></summary>
 
+## 🚀 Quick Installation
+
+```bash
+termux-setup-storage
 ## 🚀 Instalación Rápida
 
 ```bash
@@ -100,11 +104,11 @@ npm install
 npm start
 ```
 
-> *Si aparece **(Y/I/N/O/D/Z) [default=N] ?** use la letra **"y"** y luego **"ENTER"** para continuar con la instalación del mejor bot.*
+> If (Y/I/N/O/D/Z) [default=N] ? appears, use the letter "y" and then "ENTER" to continue installing the best bot.
 </details>
 
 <details>
-<summary><b>💻 ACTIVAR EN TERMUX EN CASO DE DETENERSE</b></summary>
+<summary><b>💻 ACTIVATE IN TERMUX IF STOPPED</b></summary>
 
 ```bash
 cd 
@@ -172,23 +176,15 @@ yarn install && npm install
 npm start
 ```
 
-✅ ¡Bot listo para usarse! El mejor bot de WhatsApp 🥷
+✅Bot is ready to use. Best whatsapp bot
 </details>
 
 
 ![line](https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif)
 
-
-## 🔗 Enlaces oficiales
-
-| APP | TIPO | ENLACE |
-|------|-------------|--------|
-| 📱 WhatsApp Canal Oficial | Noticias y actualizaciones | [¡Aquí!](https://whatsapp.com/channel/0029VbB36XC8aKvQevh8Bp04) |
-| 👥 Grupo de Soporte | Comunidad y ayuda | [¡Aquí!](https://chat.whatsapp.com/HBJ8BniXgtNHfiLQFKwrcV?mode=wwt) |
-
 ![line](https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif)
 
-## 👤 Creador del proyecto
+## 👤 Creator of this project
 
 <a href="https://github.com/thecarlos19">
   <img src="https://github.com/thecarlos19.png" width="250" height="250" alt="thecarlos19"/>
@@ -209,6 +205,6 @@ npm start
 
 ![line](https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif)
 
-🔋 *Powered by* [**The Legends** ⚡](https://whatsapp.com/channel/0029VbB36XC8aKvQevh8Bp04)
+🔋 *Powered by* [Iyii]()
 
 <img src="https://readme-typing-svg.herokuapp.com/?font=mono&size=30&duration=4000&color=0000FF&center=falso&vCenter=falso&lines=✞+𝐁𝐋𝐀𝐂𝐊+𝐂𝐋𝐎𝐕𝐄𝐑+𝐒𝐘𝐒𝐓𝐄𝐌+֎">
