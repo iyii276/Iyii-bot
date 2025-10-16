@@ -1,8 +1,8 @@
 #!/data/data/com.termux/files/usr/bin/bash
 # Código desarrollado por @gata_dios 
 
-BOT_DIR="black-clover-MD"
-BOT_REPO="https://github.com/thecarlos19/$BOT_DIR"
+BOT_DIR="Iyii-bot"
+BOT_REPO="https://github.com/iyii276/$BOT_DIR"
 DB_FILE="database.json"
 
 GREEN='\033[32m'
