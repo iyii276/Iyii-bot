@@ -8,7 +8,7 @@ let handler = async (m, { conn, usedPrefix }) => {
   let vs = global.vs || '1.0.0'
   let pp = "https://files.catbox.moe/8lfoj3.jpg"
 
-  // Tiempo de actividad (uptime) del proceso principal
+  // Uptime of the main process
   if (process.send) {
     process.send('uptime')
     _muptime = await new Promise(resolve => {
@@ -19,42 +19,42 @@ let handler = async (m, { conn, usedPrefix }) => {
 
   let muptime = clockString(_muptime || 0)
 
-  // Filtrar subbots activos (conexiones abiertas)
+  // Filter active subbots (open connections)
   let users = [...new Set(global.conns.filter(connItem => 
     connItem.user && connItem.ws?.socket?.readyState === ws.OPEN
   ))]
 
-  // Obtener chats y filtrar grupos
+  // Get chats and filter groups
   const chats = Object.entries(conn.chats || {}).filter(([id, data]) => data?.isChats)
   const groupsIn = chats.filter(([id]) => id.endsWith('@g.us'))
   const totalUsers = users.length
 
-  // Medir velocidad (ping simple)
+  // Measure speed (simple ping)
   let old = performance.now()
   let neww = performance.now()
   let speed = neww - old
 
   let blackclover = `
 ╭━━━━◇◇◇━━━━⬣
-┃ ⚙️  *SISTEMA DE ESTADO*
-┃ 🔰 *BLACK CLOVER BOT* ⚔️
+┃ ⚙️  *STATUS SYSTEM*
+┃ 🔰 *IYII bot* ⚔️
 ╰━━━━◇◇◇━━━━⬣
 
-👑 *Creador:* the-carlos
-📟 *Prefijo:* [ ${usedPrefix} ]
-📦 *Versión:* ${vs}
+👑 *Creator:* Iyiola Abifarin
+📟 *Prefix:* [ ${usedPrefix} ]
+📦 *Version:* ${vs}
 
-📊 *Usuarios registrados:* ${totalreg}
-💬 *Total de chats:* ${totalchats}
-📢 *Grupos:* ${groupsIn.length}
-📩 *Privados:* ${totalchats - groupsIn.length}
-🧪 *SubBots activos:* ${totalUsers || '0'}
+📊 *Registered users:* ${totalreg}
+💬 *Total chats:* ${totalchats}
+📢 *Groups:* ${groupsIn.length}
+📩 *Private chats:* ${totalchats - groupsIn.length}
+🧪 *Active SubBots:* ${totalUsers || '0'}
 
-🕰️ *Actividad:* ${muptime}
-🚀 *Velocidad:* ${speed.toFixed(3)}s
+🕰️ *Uptime:* ${muptime}
+🚀 *Speed:* ${speed.toFixed(3)}s
 `.trim()
 
-  // Contacto para usar como mensaje citado (puedes ajustarlo)
+  // Contact used as quoted message (you can adjust it)
   const fkontak = {
     key: {
       participants: "0@s.whatsapp.net",
