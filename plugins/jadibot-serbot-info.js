@@ -1,4 +1,4 @@
-// código creado x The Carlos 👑
+// code created by Iyiola Abifarin
 import fs from 'fs'
 import path from 'path'
 
@@ -30,23 +30,23 @@ async function handler(m, { conn: stars, usedPrefix }) {
   let responseMessage = `˚₊·—̳͟͞͞✞ *Subbots Black-clover-MD 🥷🏻*\n\n`
 
   if (totalUsers === 0) {
-    responseMessage += `✞ Estado:\n> ⤿ No hay *subbots conectados* por ahora.\n\n✞ Información:\n> ⤿ 🟢 Espacios disponibles: *${availableSlots}*`
+    responseMessage += `✞ Status:\n> ⤿ There are *no subbots connected* at the moment.\n\n✞ Info:\n> ⤿ 🟢 Available slots: *${availableSlots}*`
   } else if (totalUsers <= 15) {
     const listado = users
       .map((v, i) => {
         const num = v.user.jid.replace(/[^0-9]/g, '')
-        const nombre = v?.user?.name || v?.user?.pushName || '👤 Sub-Bot'
+        const name = v?.user?.name || v?.user?.pushName || '👤 Sub-Bot'
         const waLink = `https://wa.me/${num}?text=${usedPrefix}code`
-        return `✞ Subbot #${i + 1}\n> ⤿ 👾 @${num}\n> ⤿ 🌐 ${waLink}\n> ⤿ 🧠 ${nombre}`
+        return `✞ Subbot #${i + 1}\n> ⤿ 👾 @${num}\n> ⤿ 🌐 ${waLink}\n> ⤿ 🧠 ${name}`
       })
       .join('\n\n')
 
-    responseMessage += `✞ Estado:\n> ⤿ 🔢 Total conectados: *${totalUsers}*\n> ⤿ 🟢 Espacios disponibles: *${availableSlots}*\n\n${listado}`
+    responseMessage += `✞ Status:\n> ⤿ 🔢 Total connected: *${totalUsers}*\n> ⤿ 🟢 Available slots: *${availableSlots}*\n\n${listado}`
   } else {
-    responseMessage += `✞ Estado:\n> ⤿ 🔢 Total conectados: *${totalUsers}*\n> ⤿ 🟢 Espacios disponibles: *${availableSlots}*\n\nᥫ᭡ Nota:\n> ⤿ Hay demasiados subbots conectados.\n> ⤿ _No se muestra la lista detallada._`
+    responseMessage += `✞ Status:\n> ⤿ 🔢 Total connected: *${totalUsers}*\n> ⤿ 🟢 Available slots: *${availableSlots}*\n\nᥫ᭡ Note:\n> ⤿ Too many subbots are currently connected.\n> ⤿ _Detailed list not shown._`
   }
 
-  responseMessage += `\n\n📂 *Creador del Bot:* The Carlos 👑`
+  responseMessage += `\n\n📂 *Bot Creator:* The Carlos 👑`
 
   const imgDir = path.resolve('./src/img')
   let images = []
@@ -67,8 +67,8 @@ async function handler(m, { conn: stars, usedPrefix }) {
         mentions: [...new Set((responseMessage.match(/@(\d{5,16})/g) || []).map(v => v.replace('@', '') + '@s.whatsapp.net'))],
         contextInfo: {
           externalAdReply: {
-            title: "˚₊·—̳͟͞͞✞ Subbots activos",
-            body: "Subbots en tiempo real ",
+            title: "˚₊·—̳͟͞͞✞ Active Subbots",
+            body: "Subbots in real-time",
             mediaType: 1,
             renderLargerThumbnail: false, 
             sourceUrl: "https://www.instagram.com/_carlitos.zx",
@@ -79,7 +79,7 @@ async function handler(m, { conn: stars, usedPrefix }) {
       { quoted: m }
     )
   } catch (e) {
-    console.error('❌ Error enviando listado de subbots:', e)
+    console.error('❌ Error sending subbot list:', e)
     await stars.sendMessage(m.chat, { text: responseMessage }, { quoted: m })
   }
 }
