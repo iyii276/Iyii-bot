@@ -11,31 +11,31 @@ const textCyberpunk = (text) => {
 }
 
 let tags = {
-  'main': textCyberpunk('sistema'),
-  'group': textCyberpunk('grupos'),
+  'main': textCyberpunk('system'),
+  'group': textCyberpunk('groups'),
   'serbot': textCyberpunk('sub bots'),
 }
 
 const defaultMenu = {
   before: `
 ⎯͟͞͞★ ✦ 𝙐𝙎𝙀𝙍 𝙎𝙏𝘼𝙏𝙐𝙎 ✦ ★͟͞͞⎯
-│ 🪐 𝙉𝙤𝙢𝙗𝙧𝙚   » %name  
-│ ⚙️ 𝙇𝙫𝙡       » %level  
-│ ⚡ 𝙀𝙭𝙥       » %exp / %maxexp  
-│ 🌐 𝙈𝙤𝙙𝙚      » %mode  
-│ ⏳ 𝘼𝙘𝙩𝙞𝙫𝙤   » %muptime  
-│ 👥 𝙐𝙨𝙪𝙖𝙧𝙞𝙤𝙨 » %totalreg  
+│ 🪐 𝙉𝙖𝙢𝙚   » %name  
+│ ⚙️ 𝙇𝙚𝙫𝙚𝙡  » %level  
+│ ⚡ 𝙀𝙭𝙥    » %exp / %maxexp  
+│ 🌐 𝙈𝙤𝙙𝙚   » %mode  
+│ ⏳ 𝘼𝙘𝙩𝙞𝙫𝙚 » %muptime  
+│ 👥 𝙐𝙨𝙚𝙧𝙨 » %totalreg  
 ★━━━━━━━━━━━━━━━━━★
 
-🧬 » 𝗛𝗔𝗖𝗞 𝗡𝗢𝗗𝗘 𝗔𝗖𝗧𝗜𝗩𝗢 «  
-👑 » 𝗢𝗽𝗲𝗿𝗮𝗱𝗼𝗿:—͟͟͞͞𝐓𝐡𝐞 𝐂𝐚𝐫𝐥𝐨𝐬 𖣘 «
+🧬 » 𝗛𝗔𝗖𝗞 𝗡𝗢𝗗𝗘 𝗔𝗖𝗧𝗜𝗩𝗘 «  
+👑 » 𝗢𝗽𝗲𝗿𝗮𝘁𝗼𝗿:—͟͟͞͞𝐓𝐡𝐞 𝐂𝐚𝐫𝐥𝐨𝐬 𖣘 «
 %readmore
 `.trimStart(),
 
-header: '\n╭─〔 🦠 %category 〕─╮',
+  header: '\n╭─〔 🦠 %category 〕─╮',
   body: '│ ⚙️ %cmd\n',
   footer: '╰────────────────╯',
-  after: '\n⌬ 𝗖𝗬𝗕𝗘𝗥 𝗠𝗘𝗡𝗨 ☠️ - Sistema ejecutado con éxito.'
+  after: '\n⌬ 𝗖𝗬𝗕𝗘𝗥 𝗠𝗘𝗡𝗨 ☠️ - System executed successfully.'
 }
 
 let handler = async (m, { conn, usedPrefix: _p }) => {
@@ -47,7 +47,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     let muptime = clockString(_uptime)
     let ramUsage = (process.memoryUsage().rss / 1024 / 1024).toFixed(2)
     let totalreg = Object.keys(global.db.data.users).length
-    let mode = global.opts["self"] ? "Privado" : "Público"
+    let mode = global.opts["self"] ? "Private" : "Public"
 
     let help = Object.values(global.plugins).filter(p => !p.disabled).map(p => ({
       help: Array.isArray(p.help) ? p.help : [p.help],
@@ -95,15 +95,15 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
 
     let text = _text.replace(/%(\w+)/g, (_, key) => replace[key] || '')
 
-    // el mejor bot 
+    // best bot
     await conn.sendMessage(m.chat, {
       video: { url: 'https://files.catbox.moe/n7wh11.mp4' },
       caption: text,
       gifPlayback: true,
       footer: '🧠 BLACK CLOVER SYSTEM ☘️',
       buttons: [
-        { buttonId: `${_p}menurpg`, buttonText: { displayText: '🏛️ M E N U R P G' }, type: 1 },
-        { buttonId: `${_p}code`, buttonText: { displayText: '🕹 ＳＥＲＢＯＴ' }, type: 1 }
+        { buttonId: `${_p}menurpg`, buttonText: { displayText: '🏛️ R P G  M E N U' }, type: 1 },
+        { buttonId: `${_p}code`, buttonText: { displayText: '🕹 S E R B O T' }, type: 1 }
       ],
       contextInfo: {
         externalAdReply: {
@@ -119,7 +119,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
 
   } catch (e) {
     console.error(e)
-    conn.reply(m.chat, '❎ Error al generar el menú del sistema.', m)
+    conn.reply(m.chat, '❎ Error generating the system menu.', m)
   }
 }
 
