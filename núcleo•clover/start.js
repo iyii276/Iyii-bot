@@ -121,13 +121,13 @@ const credsExist = fs.existsSync(`./${sessions}/creds.json`);
 if (!methodCodeQR && !methodCode && !credsExist) {
   do {
     opcion = await question(
-      theme.banner('⌬ Elija una opción:\n') +
-      theme.highlight('1. Con código QR\n') +
-      theme.text('2. Con código de texto de 8 dígitos\n--> ')
+      theme.banner('⌬ Choose an option:\n') +
+      theme.highlight('1. With QR code\n') +
+      theme.text('2. With 8-digit text code\n--> ')
     );
 
     if (!/^[1-2]$/.test(opcion)) {
-      console.log(chalk.bold.redBright(`✞ No se permiten numeros que no sean 1 o 2, tampoco letras o símbolos especiales.`));
+      console.log(chalk.bold.redBright(`✞ Numbers other than 1 or 2 are not allowed, nor are letters or special symbols.`));
     }
   } while ((opcion !== '1' && opcion !== '2') || credsExist);
 }
@@ -173,7 +173,7 @@ if (!credsExist) {
         addNumber = phoneNumber.replace(/[^0-9]/g, '');
       } else {
         do {
-          phoneNumber = await question(theme.prompt(`✞ Por favor, Ingrese el número de WhatsApp.\n---> `));
+          phoneNumber = await question(theme.prompt(`✞ Please enter the WhatsApp number.\n---> `));
           phoneNumber = phoneNumber.replace(/\D/g, '');
           if (!phoneNumber.startsWith('+')) phoneNumber = `+${phoneNumber}`;
         } while (!await isValidPhoneNumber(phoneNumber));
@@ -182,7 +182,7 @@ if (!credsExist) {
         setTimeout(async () => {
           let codeBot = await conn.requestPairingCode(addNumber);
           codeBot = codeBot?.match(/.{1,4}/g)?.join("-") || codeBot;
-          console.log(chalk.bold.white(theme.banner(`✞ Código:`)), chalk.bold.white(chalk.white(codeBot)));
+          console.log(chalk.bold.white(theme.banner(`✞ Code:`)), chalk.bold.white(chalk.white(codeBot)));
         }, 3000);
       }
     }
@@ -193,7 +193,7 @@ if (!credsExist) {
 conn.isInit = false;
 conn.well = false;
 
-conn.logger.info(` ✞ H E C H O\n`);
+conn.logger.info(` ✞ D O N E\n`);
 
 if (!opts['test']) {
   if (global.db) {
@@ -221,37 +221,37 @@ async function connectionUpdate(update) {
 
   if ((qr && qr !== '0') || methodCodeQR) {
     if (opcion === '1' || methodCodeQR) {
-      console.log(chalk.bold.yellow(`\n❐ ESCANEA EL CÓDIGO QR - EXPIRA EN 45 SEGUNDOS`));
+      console.log(chalk.bold.yellow(`\n❐ SCAN THE QR CODE - EXPIRES IN 45 SECONDS`));
     }
   }
 
   if (connection === 'open') {
-    console.log(chalk.bold.green('\n🧙‍♂️ BLACK CLOVER BOT CONECTADO ✞'));
+    console.log(chalk.bold.green('\n🧙‍♂️ BLACK CLOVER BOT CONNECTED ✞'));
   }
 
   if (connection === 'close') {
     switch (reason) {
       case DisconnectReason.badSession:
       case DisconnectReason.loggedOut:
-        console.log(chalk.bold.redBright(`\n⚠︎ SESIÓN INVÁLIDA O CERRADA, BORRA LA CARPETA ${global.sessions} Y ESCANEA EL CÓDIGO QR ⚠︎`));
+        console.log(chalk.bold.redBright(`\n⚠︎ INVALID OR CLOSED SESSION, DELETE THE ${global.sessions} FOLDER AND SCAN THE QR CODE ⚠︎`));
         break;
       case DisconnectReason.connectionClosed:
-        console.log(chalk.bold.magentaBright(`\n⚠︎ CONEXIÓN CERRADA, REINICIANDO...`));
+        console.log(chalk.bold.magentaBright(`\n⚠︎ CONNECTION CLOSED, RESTARTING...`));
         break;
       case DisconnectReason.connectionLost:
-        console.log(chalk.bold.blueBright(`\n⚠︎ CONEXIÓN PERDIDA, RECONECTANDO...`));
+        console.log(chalk.bold.blueBright(`\n⚠︎ CONNECTION LOST, RECONNECTING...`));
         break;
       case DisconnectReason.connectionReplaced:
-        console.log(chalk.bold.yellowBright(`\n⚠︎ CONEXIÓN REEMPLAZADA, OTRA SESIÓN INICIADA`));
+        console.log(chalk.bold.yellowBright(`\n⚠︎ CONNECTION REPLACED, ANOTHER SESSION STARTED`));
         return;
       case DisconnectReason.restartRequired:
-        console.log(chalk.bold.cyanBright(`\n☑ REINICIANDO SESIÓN...`));
+        console.log(chalk.bold.cyanBright(`\n☑ RESTARTING SESSION...`));
         break;
       case DisconnectReason.timedOut:
-        console.log(chalk.bold.yellowBright(`\n⚠︎ TIEMPO AGOTADO, REINTENTANDO CONEXIÓN...`));
+        console.log(chalk.bold.yellowBright(`\n⚠︎ TIME OUT, RETRYING CONNECTION...`));
         break;
       default:
-        console.log(chalk.bold.redBright(`\n⚠︎ DESCONEXIÓN DESCONOCIDA (${reason || 'Desconocido'})`));
+        console.log(chalk.bold.redBright(`\n⚠︎ UNKNOWN DISCONNECTION (${reason || 'Unknown'})`));
         break;
     }
 
@@ -308,9 +308,9 @@ global.rutaJadiBot = join(__dirname, '../núcleo•clover/blackJadiBot')
 if (global.blackJadibts) {
   if (!existsSync(global.rutaJadiBot)) {
     mkdirSync(global.rutaJadiBot, { recursive: true }) 
-    console.log(chalk.bold.cyan(`La carpeta: ${jadi} se creó correctamente.`))
+    console.log(chalk.bold.cyan(`The folder: ${jadi} was created successfully.`))
   } else {
-    console.log(chalk.bold.cyan(`La carpeta: ${jadi} ya está creada.`)) 
+    console.log(chalk.bold.cyan(`The folder: ${jadi} is already created.`)) 
   }
 
   const readRutaJadiBot = readdirSync(global.rutaJadiBot)
@@ -430,7 +430,7 @@ function purgeSessionSB() {
       }
     })
   } catch (err) {
-    console.log(chalk.bold.red(`Error eliminando pre-keys de SB:\n${err}`))
+    console.log(chalk.bold.red(`Error deleting SB pre-keys:\n${err}`))
   }
 }
 
@@ -441,11 +441,11 @@ function purgeOldFiles() {
       readdirSync(dir).forEach(file => {
         if (file !== 'creds.json') {
           unlinkSync(join(dir, file))
-          console.log(chalk.bold.cyanBright(`\n╭» ❍ ARCHIVOS ❍\n│→ ${file} ELIMINADO\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ⌫ ♻`))
+          console.log(chalk.bold.cyanBright(`\n╭» ❍ FILES ❍\n│→ ${file} DELETED\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ⌫ ♻`))
         }
       })
     } catch (err) {
-      console.log(chalk.bold.red(`\n╭» ❍ ERROR ❍\n│→ No se pudo eliminar archivos en ${dir}\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ⌫ ✘\n` + err))
+      console.log(chalk.bold.red(`\n╭» ❍ ERROR ❍\n│→ Could not delete files in ${dir}\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ⌫ ✘\n` + err))
     }
   })
 }
@@ -453,13 +453,13 @@ function purgeOldFiles() {
 setInterval(async () => {
   if (stopped === 'close' || !conn || !conn.user) return
   await clearTmp()
-  console.log(chalk.bold.cyanBright(`\n╭» ❍ MULTIMEDIA ❍\n│→ ARCHIVOS DE LA CARPETA TMP ELIMINADOS\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ⌫ ♻`))
+  console.log(chalk.bold.cyanBright(`\n╭» ❍ MULTIMEDIA ❍\n│→ TMP FOLDER FILES DELETED\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ⌫ ♻`))
 }, 1000 * 60 * 4)
 
 setInterval(async () => {
   if (stopped === 'close' || !conn || !conn.user) return
   await purgeSession()
-  console.log(chalk.bold.cyanBright(`\n╭» ❍ ${global.sessions} ❍\n│→ SESIONES NO ESENCIALES ELIMINADAS\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ⌫ ♻`))
+  console.log(chalk.bold.cyanBright(`\n╭» ❍ ${global.sessions} ❍\n│→ NON-ESSENTIAL SESSIONS DELETED\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ⌫ ♻`))
 }, 1000 * 60 * 10)
 
 setInterval(async () => {
@@ -472,7 +472,7 @@ setInterval(async () => {
   await purgeOldFiles()
 }, 1000 * 60 * 10)
 
-_quickTest().then(() => conn.logger.info(chalk.bold(`✞ H E C H O\n`.trim()))).catch(console.error)
+_quickTest().then(() => conn.logger.info(chalk.bold(`✞ D O N E\n`.trim()))).catch(console.error)
 
 let stopped; 
 
@@ -480,7 +480,7 @@ setInterval(async () => {
   if (stopped === 'close' || !conn || !conn?.user) return;
   const _uptime = process.uptime() * 1000;
   const uptime = clockString(_uptime);
-  const bio = `🦠 Black-clover-MD |「🕒」Aᥴ𝗍і᥎o: ${uptime}`;
+  const bio = `🦠 IYII |「🕒」Active: ${uptime}`;
   await conn?.updateProfileStatus(bio).catch((_) => _);
 }, 60000);
 
@@ -494,9 +494,20 @@ function clockString(ms) {
 
 async function isValidPhoneNumber(number) {
   try {
-    number = number.replace(/\s+/g, '')
-    if (number.startsWith('+521')) number = number.replace('+521', '+52');
-    else if (number.startsWith('+52') && number[4] === '1') number = number.replace('+52 1', '+52');
+    number = number.replace(/\s+/g, '')  // Remove all spaces
+    
+    // Handle common Nigerian number formats
+    if (number.startsWith('+2340')) {
+      // Convert +2340XXXXXXXXX to +234XXXXXXXXX (remove the leading 0 after country code)
+      number = number.replace('+2340', '+234');
+    } else if (number.startsWith('0') && !number.startsWith('+')) {
+      // Convert local format 0XXXXXXXXXX to +234XXXXXXXXX
+      number = '+234' + number.substring(1);
+    } else if (!number.startsWith('+') && number.length === 10) {
+      // Handle 10-digit numbers without country code
+      number = '+234' + number;
+    }
+    
     const parsedNumber = phoneUtil.parseAndKeepRawInput(number)
     return phoneUtil.isValidNumber(parsedNumber)
   } catch {
