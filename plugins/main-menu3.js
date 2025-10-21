@@ -2,51 +2,51 @@ let handler = async (m, { conn }) => {
   const user = global.db.data.users[m.sender]
   const owners = global.owner.map(([id]) => id)
   const esReyMago = owners.includes(m.sender)
-  const tituloEspecial = esReyMago ? '👑 *REY MAGO SUPREMO* 👑\n' : ''
+  const tituloEspecial = esReyMago ? '👑 *SUPREME MAGIC KING* 👑\n' : ''
 
   const texto = `
-╭━━━[ 🧙‍♂️ *MENÚ RPG MÁGICO* ]━━━╮
-┃ 🎮 *Comandos de Aventura:*
-┃ ⛏️ .minar → Extrae minerales y gana monedas
-┃ 🎁 .daily → Reclama tu tesoro diario
-┃ ❓ .acertijo → Responde acertijos y gana recompensas
-┃ 🗡️ .robar2 @user → Intenta saquear a otro mago
-┃ 🛒 .comprar <nombre> → Compra un personaje para tu colección
-┃ 📜 .mispersonajes → Revisa tus héroes mágicos
-┃ 🔮 .pjs → Lista de personajes disponibles
-┃ 💼 .banco → Consulta tus ahorros mágicos
-┃ 💸 .enviar @user <cantidad> → Envía monedas a un aliado
-┃ ⚔️ .duelo → Desafía a otro jugador en combate
-┃ 🩸 .sacrificar → Sacrifica por poder oscuro
-┃ 🎲 .cajamisteriosa → Abre una caja con sorpresas
-┃ 🏆 .toppersonajes → Ranking de los mejores coleccionistas
-┃ 🧟 .invasionzombie → Defiende el reino de los no-muertos
-┃ 🏹 .cazar → Caza bestias y gana recompensas
-┃ 👑 .reinado → Lucha por el trono mágico
-┃ ⚡ .cambiarexp → Intercambia tu exp por monedas
-┃ 💰 .mismonedas → Revisa cuántas monedas tienes
-┃ 🔨 .trabajar → Trabaja y gana monedas con esfuerzo
-┃ 💀 .invocacion → Invoca a un personaje misterioso
-┃ 🛡️ .antirobo → Protege tus waifus de los ladrones
-┃ ➕ .math <dificultad> → Reta tu mente con matemáticas
-┃ 💘 .rw → Compra nuevas waifus
-┃ 🎁 .c → Reclama tu waifu gratis
-┃ 💖 .miswaifus → Consulta tu colección de waifus
-┃ 🔓 .desbloquear → Desbloquea tu base por unos minutos
-┃ 🫶 .robarwaifu → Intenta robar waifus de otros
-┃ 📖 .listawaifus → Descubre todas las waifus disponibles
-┃ 🥇 .topwaifus → Ve quién tiene las waifus más valiosas
+╭━━━[ 🧙‍♂️ *MAGIC RPG MENU* ]━━━╮
+┃ 🎮 *Adventure Commands:*
+┃ ⛏️ .minar → Mine minerals and earn coins
+┃ 🎁 .daily → Claim your daily treasure
+┃ ❓ .acertijo → Solve riddles and earn rewards
+┃ 🗡️ .robar2 @user → Try to loot another mage
+┃ 🛒 .comprar <name> → Buy a character for your collection
+┃ 📜 .mispersonajes → Check your magical heroes
+┃ 🔮 .pjs → List of available characters
+┃ 💼 .banco → Check your magical savings
+┃ 💸 .enviar @user <amount> → Send coins to an ally
+┃ ⚔️ .duelo → Challenge another player in combat
+┃ 🩸 .sacrificar → Sacrifice for dark power
+┃ 🎲 .cajamisteriosa → Open a box with surprises
+┃ 🏆 .toppersonajes → Top collectors ranking
+┃ 🧟 .invasionzombie → Defend the kingdom from the undead
+┃ 🏹 .cazar → Hunt beasts and earn rewards
+┃ 👑 .reinado → Fight for the magical throne
+┃ ⚡ .cambiarexp → Exchange your exp for coins
+┃ 💰 .mismonedas → Check how many coins you have
+┃ 🔨 .trabajar → Work and earn coins with effort
+┃ 💀 .invocacion → Summon a mysterious character
+┃ 🛡️ .antirobo → Protect your waifus from thieves
+┃ ➕ .math <difficulty> → Challenge your mind with math
+┃ 💘 .rw → Buy new waifus
+┃ 🎁 .c → Claim your free waifu
+┃ 💖 .miswaifus → Check your waifu collection
+┃ 🔓 .desbloquear → Unlock your base for a few minutes
+┃ 🫶 .robarwaifu → Try to steal waifus from others
+┃ 📖 .listawaifus → Discover all available waifus
+┃ 🥇 .topwaifus → See who has the most valuable waifus
 ╰━━━━━━━━━━━━━━━━━━━━⬯
 
-╭━━━[ 📊 *TU ESTADO* ]━━━╮
-┃ 🧪 Nivel de Magia: *${user.level || 0}*
-┃ ✨ Experiencia: *${user.exp || 0}*
-┃ 💰 Monedas: *${(user.monedas || 0).toLocaleString()} 🪙*
+╭━━━[ 📊 *YOUR STATUS* ]━━━╮
+┃ 🧪 Magic Level: *${user.level || 0}*
+┃ ✨ Experience: *${user.exp || 0}*
+┃ 💰 Coins: *${(user.monedas || 0).toLocaleString()} 🪙*
 ╰━━━━━━━━━━━━━━━━━━━━⬯
 
 ${tituloEspecial}
-🌟 *Sigue creciendo, aventurero*. ¡El mundo mágico espera tus hazañas!
-💡 Usa los comandos sabiamente y alcanza la gloria suprema.
+🌟 *Keep growing, adventurer*. The magical world awaits your feats!
+💡 Use the commands wisely and achieve supreme glory.
 `.trim()
 
   const url = 'https://files.catbox.moe/mfkwj2.jpg'
