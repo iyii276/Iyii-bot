@@ -1,117 +1,117 @@
 let handler = async (m, { isPrems, conn }) => {
   let img = 'https://files.catbox.moe/6u1gfe.jpg';
-  let texto = `*☁️ _M E N U - A U D I O S_ ☁️*
+  let texto = `*☁️ _A U D I O S - M E N U_ ☁️*
 
 ° _Tunometecabrasaramambiche_.
-° _Me Anda Buscando Anonymous_.
-° _Se Estan Riendiendo De Mi_.
-° _Esto Va Ser Epico Papus_.
-° _En Caso De Una Investigación_.
-° _Elmo Sabe Donde Vives_.
-° _Diagnosticado Con Gay_.
-° _Esto Va Para Ti_.
-° _Feliz Cumpleaños_.
-° _Maldito Teni_.
-° _Conoces a Miguel_.
-° _Usted es Feo_.
-° _Como Estan_.
-° _Verdad Que Te Engañe_.
-° _Hermoso Negro_.
-° _Vivan Los Novios_.
-° _Usted Esta Detenido_.
-° _Su Nivel De Pendejo_.
-° _Quien Es Tu Botsito_.
-° _No Digas Eso Papus_.
-° _No Me Hagas Usar Esto_.
-° _No Me Hables_.
-° _No Chupala_.
-° _Nadie Te Pregunto_.
-° _Mierda De Bot_.
-° _Marica Tu_.
-° _Ma Ma Masivo_.
-° _La Oración_.
-° _Lo Paltimos_.
-° _Jesucristo_.
-° _Juicioso_.
-° _Homero Chino_.
-° _Hora De Sexo_.
-° _Gemidos_.
-° _Gaspi Y La Minita_.
-° _Gaspi Frase_.
-° _Goku Pervertido_.
-° _Fino Señores_.
-° _Feliz Navidad_.
-° _El Pepe_.
-° _El Toxico_.
-° _Corte Corte_.
-° _Cambiate A Movistar_.
-° _Buenas Noches_.
-° _Bueno Si_.
-° _Buenos Días_.
-° _Bienvenido Wey_.
-° _Bien Pensado Woody_.
-° _Baneado_.
-° _Basado_.
+° _Anonymous Is Looking For Me_.
+° _They're Laughing At Me_.
+° _This Is Going To Be Epic Bros_.
+° _In Case Of An Investigation_.
+° _Elmo Knows Where You Live_.
+° _Diagnosed With Gay_.
+° _This Is For You_.
+° _Happy Birthday_.
+° _Damn Teni_.
+° _Do You Know Miguel_.
+° _You Are Ugly_.
+° _How Are You_.
+° _Did I Trick You_.
+° _Beautiful Black_.
+° _Long Live The Newlyweds_.
+° _You Are Under Arrest_.
+° _Your Level Of Stupidity_.
+° _Who Is Your Little Bot_.
+° _Don't Say That Bros_.
+° _Don't Make Me Use This_.
+° _Don't Talk To Me_.
+° _Don't Suck It_.
+° _Nobody Asked You_.
+° _Shitty Bot_.
+° _You Faggot_.
+° _Massive Mom_.
+° _The Prayer_.
+° _We Split It_.
+° _Jesus Christ_.
+° _Judicious_.
+° _Chinese Homer_.
+° _Sex Time_.
+° _Moans_.
+° _Gaspi And The Girl_.
+° _Gaspi Phrase_.
+° _Perverted Goku_.
+° _Fine Gentlemen_.
+° _Merry Christmas_.
+° _The Pepe_.
+° _The Toxic_.
+° _Cut Cut_.
+° _Switch To Movistar_.
+° _Good Night_.
+° _Well Yes_.
+° _Good Morning_.
+° _Welcome Dude_.
+° _Well Thought Woody_.
+° _Banned_.
+° _Based_.
 ° _Ara Ara_.
-° _Amongos_.
-° _A Nadie Le Importa_.
-° _Audio Hentai_.
-° _Aguanta_.
+° _Among Us_.
+° _Nobody Cares_.
+° _Hentai Audio_.
+° _Hold On_.
 ° _OMG_.
 ° _Onichan_.
 ° _Orale_.
-° _Pasa Pack_.
+° _Send Pack_.
 ° _Pikachu_.
 ° _Pokemon_.
-° _Potasio_.
+° _Potassium_.
 ° _Rawr_.
 ° _Siuuu_.
 ° _Takataka_.
-° _Tarado_.
-° _Teamo_.
+° _Fool_.
+° _I Love You_.
 ° _TKA_.
-° _Un Pato_.
+° _A Duck_.
 ° _WTF_.
 ° _Yamete_.
-° _Yokese_.
+° _Whatever_.
 ° _Yoshi_.
 ° _ZZZZ_.
-° _Bebesita_.
-° _Calla Fan De BTS_.
-° _Chiste_.
-° _Contexto_.
-° _Cagaste_.
-° _Delibery_.
-° _Donde Esta_.
-° _Enojado_.
-° _Entrada_.
-° _Es Viernes_.
-° _Estoy Triste_.
-° _Feriado_.
+° _Baby_.
+° _Shut Up BTS Fan_.
+° _Joke_.
+° _Context_.
+° _You Screwed Up_.
+° _Delivery_.
+° _Where Is It_.
+° _Angry_.
+° _Entrance_.
+° _It's Friday_.
+° _I'm Sad_.
+° _Holiday_.
 ° _Freefire_.
-° _Hablame_.
+° _Talk To Me_.
 ° _Hey_.
 ° _In Your Area_.
-° _Joder_.
-° _Me Olvide_.
-° _Me Pica Los Cocos_.
-° _Me Voy_.
+° _Fuck_.
+° _I Forgot_.
+° _My Coconuts Itch_.
+° _I'm Leaving_.
 ° _Mmmm_.
-° _Momento XDS_.
-° _Motivacion_.
+° _XDS Moment_.
+° _Motivation_.
 ° _Nico Nico_.
-° _No Estes Tite_.
-° _No Rompas Mas_.
-° _Q Onda_.
-° _Se Pubrio_.
-° _Temazo_.
-° _Tengo Los Calzones_.
-° _Traiganle Una Falda_.
-° _Una Pregunta_.
-° _Vete A La VRG_.
+° _Don't Be Mad_.
+° _Don't Break Anymore_.
+° _What's Up_.
+° _It Broke_.
+° _Awesome Song_.
+° _I Have The Underwear_.
+° _Bring Him A Skirt_.
+° _A Question_.
+° _Go To Hell_.
 ° _:V_.`;
 
-  // Contacto simulado
+  // Simulated contact
   const fkontak = {
     key: {
       participants: '0@s.whatsapp.net',
