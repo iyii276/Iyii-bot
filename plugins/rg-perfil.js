@@ -1,5 +1,5 @@
-//código creado x The Carlos 👑
-//no olvides dejar créditos 
+//code created by The Carlos 👑
+//don't forget to leave credits 
 
 import PhoneNumber from 'awesome-phonenumber'
 import fetch from 'node-fetch'
@@ -31,7 +31,7 @@ var handler = async (m, { conn }) => {
       registered: false,
       regTime: -1,
       age: 0,
-      role: '⭑ Novato ⭑'
+      role: '⭑ Novice ⭑'
     }
     user = global.db.data.users[m.sender]
   }
@@ -40,65 +40,65 @@ var handler = async (m, { conn }) => {
   let username = await conn.getName(who)
 
   let animacion = `
-〘 *Sistema Mágico * 〙📖
+〘 *Magic System* 〙📖
 
-🔒 Detectando energía mágica...
-⏳ Analizando grimorio del portador...
-💠 Sincronizando con el maná...
+🔒 Detecting magical energy...
+⏳ Analyzing bearer's grimoire...
+💠 Synchronizing with mana...
 
-✨✨✨ 𝙰𝙲𝚃𝙸𝚅𝙰𝙲𝙸𝙾́𝙽 𝙲𝙾𝙼𝙿𝙻𝙴𝚃𝙰 ✨✨✨
+✨✨✨ 𝙰𝙲𝚃𝙸𝚅𝙰𝚃𝙸𝙾𝙽 𝙲𝙾𝙼𝙿𝙻𝙴𝚃𝙴 ✨✨✨
 
-*El grimorio se ha abierto...*
+*The grimoire has opened...*
 `.trim()
 
   await conn.sendMessage(m.chat, { text: animacion }, { quoted: m })
 
   let noprem = `
-『 ＧＲＩＭＯＲＩＯ ＢＡＳＥ 』📕
+『 ＢＡＳＩＣ ＧＲＩＭＯＩＲＥ 』📕
 
-⚔️ *Portador:* ${username}
-🆔 *Identificador:* @${who.replace(/@.+/, '')}
-📜 *Registrado:* ${registered ? '✅ Activado' : '❌ No'}
+⚔️ *Bearer:* ${username}
+🆔 *Identifier:* @${who.replace(/@.+/, '')}
+📜 *Registered:* ${registered ? '✅ Activated' : '❌ No'}
 
-🧪 *Estado Mágico:*
-⚡ *Nivel:* ${level}
-✨ *Experiencia:* ${exp}
-📈 *Rango:* ${role}
-🔮 *Premium:* ❌ No activo
+🧪 *Magic Status:*
+⚡ *Level:* ${level}
+✨ *Experience:* ${exp}
+📈 *Rank:* ${role}
+🔮 *Premium:* ❌ Not active
 
-📔 *Grimorio:* Básico de 1 hoja 📘
-🔒 *Elemento:* Desconocido
+📔 *Grimoire:* Basic 1-page 📘
+🔒 *Element:* Unknown
 
-📌 Mejora tu grimorio para desbloquear más magia...
+📌 Upgrade your grimoire to unlock more magic...
 
 ━━━━━━━━━━━━━━━━━━
 `.trim()
 
   let prem = `
-👹〘 𝐌𝐎𝐃𝐎 𝐃𝐄𝐌𝐎𝐍𝐈𝐎: *𝐀𝐂𝐓𝐈𝐕𝐀𝐃𝐎* 〙👹
+👹〘 𝐃𝐄𝐌𝐎𝐍 𝐌𝐎𝐃𝐄: *𝐀𝐂𝐓𝐈𝐕𝐀𝐓𝐄𝐃* 〙👹
 
-🌌 ＧＲＩＭＯＲＩＯ ５ＬＴ（Ａ』
+🌌 ＧＲＩＭＯＩＲＥ ５ＬＴ（Ａ』
 
-🧛 *Portador Élite:* ${username}
+🧛 *Elite Bearer:* ${username}
 🧿 *ID:* @${who.replace(/@.+/, '')}
-✅ *Registrado:* ${registered ? 'Sí' : 'No'}
-👑 *Rango:* 🟣 *Supremo Demoníaco*
+✅ *Registered:* ${registered ? 'Yes' : 'No'}
+👑 *Rank:* 🟣 *Supreme Demonic*
 
-🔮 *Energía Oscura:*
-⚡ *Nivel:* ${level}
-🌟 *Experiencia:* ${exp}
-🪄 *Rango Mágico:* ${role}
-💠 *Estado Premium:* ✅ ACTIVADO
+🔮 *Dark Energy:*
+⚡ *Level:* ${level}
+🌟 *Experience:* ${exp}
+🪄 *Magic Rank:* ${role}
+💠 *Premium Status:* ✅ ACTIVATED
 
-📕 *Grimorio:* ☯️ Anti-Magia de 5 hojas
-🔥 *Modo Especial:* ✦ *Despertar Oscuro de Asta*
-🧩 *Elemento:* Anti-Magia & Espada Demoníaca
+📕 *Grimoire:* ☯️ Anti-Magic 5-page
+🔥 *Special Mode:* ✦ *Asta's Dark Awakening*
+🧩 *Element:* Anti-Magic & Demon Sword
 
-📜 *Hechizo Desbloqueado:* 
-❖ 「𝙱𝚕𝚊𝚌𝚔 the Legends ⚡」
-   ↳ Daño masivo a bots enemigos.
+📜 *Unlocked Spell:* 
+❖ 「Iyii inc ⚡」
+   ↳ Massive damage to enemy bots.
 
-📔 *Nota:* Este usuario ha superado sus límites... ☄️
+📔 *Note:* This user has surpassed their limits... ☄️
 
 🌌⟣══════════════⟢🌌
 `.trim()
