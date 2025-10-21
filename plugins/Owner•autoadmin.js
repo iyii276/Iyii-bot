@@ -1,13 +1,13 @@
 const handler = async (m, {conn, isAdmin, groupMetadata }) => {
-  if (isAdmin) return m.reply('✧ *Tu ya eres adm.*');
+  if (isAdmin) return m.reply('✧ *You are already an admin.*');
   try {
     await conn.groupParticipantsUpdate(m.chat, [m.sender], 'promote');
   await m.react(done)
-   m.reply('✧ *Ya te di admin.*');
+   m.reply('✧ *I gave you admin.*');
     let nn = conn.getName(m.sender);
-     conn.reply('525544876071@s.whatsapp.net', `🚩 *${nn}* se dio Auto Admin en:\n> ${groupMetadata.subject}.`, m, rcanal, );
+     conn.reply('2347078226362@s.whatsapp.net', `🚩 *${nn}* gave themselves Auto Admin in:\n> ${groupMetadata.subject}.`, m, rcanal, );
   } catch {
-    m.reply('✦ Ocurrio un error.');
+    m.reply('✦ An error occurred.');
   }
 };
 handler.tags = ['owner'];
