@@ -9,7 +9,7 @@ await conn.reply(m.chat, stdout.toString(), m, rcanal)
 await m.react(done)}
 } catch (e) {
 await m.react(error)
-await m.reply('🚩 Se han hecho cambios locales qué entran en conflicto con las Actualizaciones del Repositorio, Para actualizar, reinstala el Bot o realiza las actualizaciones manualmente.')
+await m.reply('🚩 There are local changes that conflict with Repository Updates. To update, reinstall the Bot or perform updates manually.')
 }}
 
 handler.help = ['update', 'actualizar']
