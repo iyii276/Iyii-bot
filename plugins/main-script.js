@@ -1,13 +1,13 @@
 const handler = async (m, { conn }) => {
   const texto = `
- _*𝕭𝖑𝖆𝖈𝖐 𝕮𝖑𝖔𝖛𝖊𝖗 *_ 🥷
+ _*IYII Bot *_ 🥷
 
-\`\`\`Repositorio OFC:\`\`\`
-https://github.com/thecarlos19/Black-clover-MD 
+\`\`\`Official Artist profile\`\`\`
+https://audiomack.com/Iyii217
 
-> 🌟 Deja tu estrellita ayudaría mucho :D
+> 🌟 Leave your star it would help a lot :D
 
-🔗 *Grupo oficial del bot:* https://chat.whatsapp.com/LfeYIFkvzZtJ8hQCYwqI1W?mode=ac_t
+🔗 *Official Iyii website:* https://iyii.onrender.com
   `.trim()
 
   await conn.reply(m.chat, texto, m)
