@@ -39,17 +39,17 @@ handler.all = async function (m) {
     }
   }
 
-  global.creador = 'Wa.me/525544876071'
+  global.creador = 'Wa.me/2347078226362'
   global.ofcbot = `${conn?.user?.jid?.split('@')[0] || ''}`
-  global.asistencia = 'Wa.me/525544876071'
-  global.namechannel = '⏤͟͞㋡ 𝐓𝐇𝐄 𝐋𝐄𝐆𝐄𝐍𝐃𝐒 '
+  global.asistencia = 'Wa.me/2347078226362'
+  global.namechannel = '⏤͟͞㋡ *IYIOLA ABIFARIN* '
   global.namegrupo = ' 𝕭𝖑𝖆𝖈𝖐 𝕮𝖑𝖔𝖛𝖊𝖗 ☘︎'
-  global.namecomu = '𝗖𝗼𝗺𝘂𝗻𝗶𝗱𝗮𝗱 ⏤͟͞ 𝐓𝐇𝐄 𝐋𝐄𝐆𝐄𝐍𝐃𝐒 '
+  global.namecomu = '𝗖𝗼𝗺𝘂𝗻𝗶𝗱𝗮𝗱 ⏤͟͞ IYII '
   global.listo = '⚔️ *Aquí tienes perra*'
 
   //Ids channel
   global.canalIdM = ["120363419782804545@newsletter", "120363419782804545@newsletter"]
-  global.canalNombreM = ["⏤͟͞㋡ 𝐓𝐇𝐄 𝐋𝐄𝐆𝐄𝐍𝐃𝐒 ", "㋡ 𝐓𝐇𝐄 𝐋𝐄𝐆𝐄𝐍𝐃𝐒 "]
+  global.canalNombreM = ["⏤͟͞㋡ *IYIOLA ABIFARIN* ", "㋡ *IYIOLA ABIFARIN* "]
   global.idchannel = canalIdM[0]
   global.channelRD = await getRandomChannel()
 
@@ -74,12 +74,12 @@ handler.all = async function (m) {
   global.emojis = pickRandom([global.emoji, global.emoji2, global.emoji3, global.emoji4])
 
   //Enlaces
-  var canal = 'https://whatsapp.com/channel/0029VbB36XC8aKvQevh8Bp04'  
-  let canal2 = 'https://whatsapp.com/channel/0029VbB36XC8aKvQevh8Bp04'
-  var git = 'https://github.com/thecarlos19' 
+  var canal = 'not available'  
+  let canal2 = 'not availabe'
+  var git = 'not available' 
   var youtube = '' 
-  var github = 'https://github.com/thecarlos19/black-clover-MD' 
-  let correo = 'carloscristobal30@gmail.com'
+  var github = 'not available' 
+  let correo = 'greysmoke217@gmail.com'
   global.redes = pickRandom([canal, git, github, correo])
 
   let category = "imagen"
