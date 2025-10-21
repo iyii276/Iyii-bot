@@ -1,11 +1,11 @@
 import translate from '@vitalets/google-translate-api';
 import fetch from 'node-fetch';
 const handler = async (m, {args, usedPrefix, command}) => {
-  const msg = `👑 *Uso correcto del comando ${usedPrefix + command} (idioma) (texto)*\n*Ejemplo:*\n*${usedPrefix + command} es Hello*\n\n*Conoce los idiomas admitidos en:*\n*- https://cloud.google.com/translate/docs/languages*`;
+  const msg = `👑 *Correct usage of command ${usedPrefix + command} (language) (text)*\n*Example:*\n*${usedPrefix + command} en Hola*\n\n*Learn about supported languages at:*\n*- https://cloud.google.com/translate/docs/languages*`;
   if (!args || !args[0]) return m.reply(msg);
   let lang = args[0];
   let text = args.slice(1).join(' ');
-  const defaultLang = 'es';
+  const defaultLang = 'en';
   if ((args[0] || '').length !== 2) {
     lang = defaultLang;
     text = args.join(' ');
@@ -19,7 +19,7 @@ const handler = async (m, {args, usedPrefix, command}) => {
     previewType: 0, thumbnail: icons,
     sourceUrl: redes }}})  */
     const result = await translate(`${text}`, {to: lang, autoCorrect: true});
-    await m.reply('*Traducción:* ' + result.text, m, fake);
+    await m.reply('*Translation:* ' + result.text, m, fake);
     await m.react(done)
   } catch {
     try {
@@ -32,11 +32,11 @@ const handler = async (m, {args, usedPrefix, command}) => {
       const lol = await fetch(`https://api.lolhuman.xyz/api/translate/auto/${lang}?apikey=${lolkeysapi}&text=${text}`);
       const loll = await lol.json();
       const result2 = loll.result.translated;
-      await m.reply('*Traducción:* ' + result2, m, fake);
+      await m.reply('*Translation:* ' + result2, m, fake);
       await m.react(done)
     } catch (e) {
       await m.react(error)
-      await conn.reply(m.chat, `✨️ *Ocurrió Un Error*\n\n${e}`, m, fake);
+      await conn.reply(m.chat, `✨️ *An Error Occurred*\n\n${e}`, m, fake);
     }
   }
 };
