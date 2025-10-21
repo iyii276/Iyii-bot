@@ -25,19 +25,19 @@ let handler = async (m, { conn, __dirname }) => {
             deletedFiles.push(filePath)
           }
         } catch (err) {
-          console.error(`No se pudo eliminar: ${filePath}`, err)
+          console.error(`Could not delete: ${filePath}`, err)
         }
       }
     }
 
     await conn.reply(
       m.chat,
-      `🚩 Limpieza completada.\nArchivos eliminados: ${deletedFiles.length}`,
+      `🚩 Cleanup completed.\nFiles deleted: ${deletedFiles.length}`,
       m
     )
   } catch (err) {
     console.error(err)
-    await conn.reply(m.chat, '❌ Ocurrió un error al limpiar la carpeta tmp.', m)
+    await conn.reply(m.chat, '❌ An error occurred while cleaning the tmp folder.', m)
   }
 }
 
