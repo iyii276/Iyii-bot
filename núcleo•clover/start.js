@@ -98,8 +98,8 @@ const msgRetryCounterCache = new NodeCache();
 const { version } = await fetchLatestBaileysVersion();
 let phoneNumber = global.botNumber;
 
-const methodCodeQR = process.argv.includes("qr");
-const methodCode = !!phoneNumber || process.argv.includes("code");
+const methodCodeQR = true; // Always use QR code
+const methodCode = false; // Disable code method
 const MethodMobile = process.argv.includes("mobile");
 
 const theme = {
@@ -113,29 +113,14 @@ const theme = {
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 const question = (texto) => new Promise((resolver) => rl.question(texto, resolver));
 
-let opcion;
-if (methodCodeQR) opcion = '1';
+let opcion = '1'; // Always use option 1 (QR code)
 
 const credsExist = fs.existsSync(`./${sessions}/creds.json`);
-
-if (!methodCodeQR && !methodCode && !credsExist) {
-  do {
-    opcion = await question(
-      theme.banner('⌬ Choose an option:\n') +
-      theme.highlight('1. With QR code\n') +
-      theme.text('2. With 8-digit text code\n--> ')
-    );
-
-    if (!/^[1-2]$/.test(opcion)) {
-      console.log(chalk.bold.redBright(`✞ Numbers other than 1 or 2 are not allowed, nor are letters or special symbols.`));
-    }
-  } while ((opcion !== '1' && opcion !== '2') || credsExist);
-}
 
 console.info = () => {};
 console.debug = () => {};
 
-const printQR = opcion === '1' || methodCodeQR;
+const printQR = true; // Always print QR
 const browserName = printQR ? `${nameqr}` : 'Ubuntu';
 const browserProduct = 'Edge';
 const browserVersion = printQR ? '20.0.04' : '110.0.1587.56';
@@ -165,30 +150,8 @@ const connectionOptions = {
 global.conn = makeWASocket(connectionOptions);
 
 if (!credsExist) {
-  if (opcion === '2' || methodCode) {
-    opcion = '2';
-    if (!conn.authState.creds.registered) {
-      let addNumber;
-      if (!!phoneNumber) {
-        addNumber = phoneNumber.replace(/[^0-9]/g, '');
-      } else {
-        do {
-          phoneNumber = await question(theme.prompt(`✞ Please enter the WhatsApp number.\n---> `));
-          phoneNumber = phoneNumber.replace(/\D/g, '');
-          if (!phoneNumber.startsWith('+')) phoneNumber = `+${phoneNumber}`;
-        } while (!await isValidPhoneNumber(phoneNumber));
-        rl.close();
-        addNumber = phoneNumber.replace(/\D/g, '');
-        setTimeout(async () => {
-          let codeBot = await conn.requestPairingCode(addNumber);
-          codeBot = codeBot?.match(/.{1,4}/g)?.join("-") || codeBot;
-          console.log(chalk.bold.white(theme.banner(`✞ Code:`)), chalk.bold.white(chalk.white(codeBot)));
-        }, 3000);
-      }
-    }
-  }
+  console.log(chalk.bold.yellow(`\n❐ SCAN THE QR CODE - EXPIRES IN 45 SECONDS`));
 }
-
 
 conn.isInit = false;
 conn.well = false;
@@ -220,9 +183,7 @@ async function connectionUpdate(update) {
   if (!global.db.data) loadDatabase();
 
   if ((qr && qr !== '0') || methodCodeQR) {
-    if (opcion === '1' || methodCodeQR) {
-      console.log(chalk.bold.yellow(`\n❐ SCAN THE QR CODE - EXPIRES IN 45 SECONDS`));
-    }
+    console.log(chalk.bold.yellow(`\n❐ SCAN THE QR CODE - EXPIRES IN 45 SECONDS`));
   }
 
   if (connection === 'open') {
