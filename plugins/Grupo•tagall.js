@@ -5,14 +5,14 @@ const handler = async (m, {isOwner, isAdmin, conn, text, participants, args, com
     return;
   }
   const pesan = args.join` `;
-  const colombia = `💌 *Mensaje:* ${pesan}`;
-  let teks = `💥 *INVOCANDO GRUPO*\n${colombia}\n\n☁️ *Tags:*\n`;
+  const colombia = `💌 *Message:* ${pesan}`;
+  let teks = `💥 *SUMMONING GROUP*\n${colombia}\n\n☁️ *Tags:*\n`;
   for (const mem of participants) {
     teks += `@${mem.id.split('@')[0]}\n`;
   }
   conn.sendMessage(m.chat, {text: teks, mentions: participants.map((a) => a.id)} );
 };
-handler.help = ['tagall *<mesaje>*', 'invocar *<mesaje>*'];
+handler.help = ['tagall *<message>*', 'invocar *<message>*'];
 handler.tags = ['grupo'];
 handler.command = ['tagall', 'invocar'];
 handler.admin = true;
