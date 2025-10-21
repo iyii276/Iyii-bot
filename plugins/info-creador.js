@@ -3,12 +3,12 @@ import PhoneNumber from 'awesome-phonenumber'
 let handler = async (m, { conn, usedPrefix, text, args, command }) => {
   let ownerNumber = '2347078226362' // Owner
   let bio = (await conn.fetchStatus(ownerNumber + '@s.whatsapp.net').catch(_ => {}))?.status || 'Owner of the Black Clover system'
-  let biobot = (await conn.fetchStatus(conn.user.jid).catch(_ => {}))?.status || 'Official Black Clover Bot'
+  let biobot = (await conn.fetchStatus(conn.user.jid).catch(_ => {}))?.status || 'Official *IYII* Bot'
 
   await sendContactArray(conn, m.chat, [
-    [`${ownerNumber}`, `🥷🏻 Owner`, `𝐓𝐇𝐄 𝐂𝐀𝐑𝐋𝐎𝐒`, 'Developer', 'support@email.com', `CDMX`, `${global.yt}`, bio],
-    [`${conn.user.jid.split('@')[0]}`, `Black Clover Bot 🤖`, `${packname}`, `📵 No Spamming`, 'support@email.com', `CDMX`, md, biobot],
-    [`2347078226362`, `Clover Assistant`, `Bot Helper`, 'Support', 'support@email.com', `CDMX`, md, biobot]
+    [`${ownerNumber}`, `🥷🏻 Owner`, `*IYIOLA ABIFARIN*`, 'Developer', 'greysmoke217@gmail.com', `CDMX`, `${global.yt}`, bio],
+    [`${conn.user.jid.split('@')[0]}`, `*IYII* Bot 🤖`, `${packname}`, `📵 No Spamming`, 'support@email.com', `CDMX`, md, biobot],
+    [`2347078226362`, `Clover Assistant`, `Bot Helper`, 'Support', 'greysmoke217@gmail.com', `CDMX`, md, biobot]
   ], m)
 
   throw false
