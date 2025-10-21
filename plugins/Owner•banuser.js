@@ -1,10 +1,10 @@
 let handler = async (m, { conn, text }) => {
-    if (!text) return m.reply('⚠️ *Ingresa el @tag de algún usuario.*')
+    if (!text) return m.reply('⚠️ *Enter the @tag of a user.*')
 
     let who
     if (m.isGroup) who = m.mentionedJid[0]
     else who = m.chat
-    if (!who) return m.reply('⚠️ *Ingresa el @tag de algún usuario.*')
+    if (!who) return m.reply('⚠️ *Enter the @tag of a user.*')
 
     let users = global.db.data.users
     if (!users[who]) users[who] = {}
@@ -14,15 +14,15 @@ let handler = async (m, { conn, text }) => {
     await conn.sendMessage(
         m.chat,
         {
-            text: `⚠️ *El usuario @${who.split('@')[0]} fue baneado con éxito.*`,
+            text: `⚠️ *User @${who.split('@')[0]} was successfully banned.*`,
             contextInfo: {
                 forwardingScore: 200,
                 isForwarded: false,
                 mentionedJid: [who],
                 externalAdReply: {
                     showAdAttribution: false,
-                    title: `𝕭𝖑𝖆𝖈𝖐 𝕮𝖑𝖔𝖛𝖊𝖗 ☘︎`,
-                    body: `✡︎ Dev • The Carlos`,
+                    title: `IYII Bot ☘︎`,
+                    body: `✡︎ Dev • Iyiola Abifarin`,
                     mediaType: 2,
                     sourceUrl: global.redes || '',
                     thumbnail: global.icons || null
