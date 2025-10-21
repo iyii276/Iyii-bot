@@ -1,20 +1,19 @@
-
-// Respeten credito xddddd (ratas inmundas)
+// Respect credits xddddd (filthy rats)
 import fetch from 'node-fetch';
 import db from '../lib/database.js';
 
 const img = 'https://files.catbox.moe/d3ynrg.jpg';
 
 function obtenerRango(level) {
-  if (level >= 100000) return '🌟 Rey Mago';
-  if (level >= 70) return '👑 Mago Real';
-  if (level >= 50) return '⚔️ Capitán de Escuadrón';
-  if (level >= 40) return '🔮 Alto Mago';
-  if (level >= 30) return '🥇 Caballero Mágico de Oro';
-  if (level >= 20) return '🥈 Caballero Mágico de Plata';
-  if (level >= 10) return '🥉 Caballero Mágico de Bronce';
-  if (level >= 5) return '🌱 Mago Novato';
-  return '📘 Aprendiz de Grimorio';
+  if (level >= 100000) return '🌟 King Mage';
+  if (level >= 70) return '👑 Royal Mage';
+  if (level >= 50) return '⚔️ Squad Captain';
+  if (level >= 40) return '🔮 High Mage';
+  if (level >= 30) return '🥇 Golden Magic Knight';
+  if (level >= 20) return '🥈 Silver Magic Knight';
+  if (level >= 10) return '🥉 Bronze Magic Knight';
+  if (level >= 5) return '🌱 Novice Mage';
+  return '📘 Grimoire Apprentice';
 }
 
 let handler = async (m, { conn }) => {
@@ -24,7 +23,7 @@ let handler = async (m, { conn }) => {
     if (who === conn.user.id) return m.react('✖️');
 
     if (!global.db.data.users[who]) {
-      return m.reply(`📕 *El grimorio de este usuario aún no ha sido registrado en el Reino Mágico.*`);
+      return m.reply(`📕 *This user's grimoire has not yet been registered in the Magic Kingdom.*`);
     }
 
     let user = global.db.data.users[who];
@@ -34,13 +33,13 @@ let handler = async (m, { conn }) => {
     let nombreParaMostrar = who === m.sender ? name : '@' + who.split('@')[0];
 
     let txt = `
-𝙂𝙍𝙄𝙈𝙊𝙍𝙄𝙊 𝙁𝙄𝙉𝘼𝙉𝘾𝙄𝙀𝙍𝙊 👑
-🧙‍♂️ ᴍᴀɢᴏ: ${nombreParaMostrar}
-🪙 ᴍᴏɴᴇᴅᴀs: *${(user.monedas || 0).toLocaleString()}*
-📚 ᴇxᴘᴇʀɪᴇɴᴄɪᴀ ᴀᴄᴜᴍᴜʟᴀᴅᴀ: *${(user.exp || 0).toLocaleString()}*
-📈 ɴɪᴠᴇʟ ᴅᴇ ᴍᴀɢɪᴀ: *${(user.level || 0).toLocaleString()}*
-🎖️ ʀᴀɴɢᴏ ᴍáɢɪᴄᴏ: *${rangoMagico}*
-🕰️ ꜰᴇᴄʜᴀ: *${new Date().toLocaleString('es-ES')}*
+𝙁𝙄𝙉𝘼𝙉𝘾𝙄𝘼𝙇 𝙂𝙍𝙄𝙈𝙊𝙄𝙍𝙀 👑
+🧙‍♂️ ᴍᴀɢᴇ: ${nombreParaMostrar}
+🪙 ᴄᴏɪɴs: *${(user.monedas || 0).toLocaleString()}*
+📚 ᴀᴄᴄᴜᴍᴜʟᴀᴛᴇᴅ ᴇxᴘᴇʀɪᴇɴᴄᴇ: *${(user.exp || 0).toLocaleString()}*
+📈 ᴍᴀɢɪᴄ ʟᴇᴠᴇʟ: *${(user.level || 0).toLocaleString()}*
+🎖️ ᴍᴀɢɪᴄ ʀᴀɴᴋ: *${rangoMagico}*
+🕰️ ᴅᴀᴛᴇ: *${new Date().toLocaleString('en-US')}*
 📘━━━━━━━━━━━━━━━━📘`.trim();
 
     await conn.sendMessage(
@@ -54,7 +53,7 @@ let handler = async (m, { conn }) => {
     );
   } catch (e) {
     console.error(e);
-    m.reply('❎ Ocurrió un error al obtener el grimorio.');
+    m.reply('❎ An error occurred while getting the grimoire.');
   }
 };
 
