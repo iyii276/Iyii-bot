@@ -3,12 +3,12 @@ import path from "path"
 
 let handler = async (m, { conn }) => {
   if (!global.owner.some(([number]) => number == m.sender.split('@')[0])) {
-    return conn.reply(m.chat, '⚠️ Este comando solo puede usarlo el *Owner*.', m)
+    return conn.reply(m.chat, '⚠️ This command can only be used by the *Owner*.', m)
   }
 
   const baseDir = path.join(__dirname, 'núcleo•clover', 'blackJadiBot')
   if (!fs.existsSync(baseDir)) {
-    return conn.reply(m.chat, '📂 No se encontró la carpeta *blackJadiBot*.', m)
+    return conn.reply(m.chat, '📂 The *blackJadiBot* folder was not found.', m)
   }
 
   let deleted = []
@@ -33,9 +33,9 @@ let handler = async (m, { conn }) => {
     }
   }
 
-  let msg = `🧹 *Limpieza de Sub-Bots*\n\n`
-  msg += `✅ Eliminados: ${deleted.length ? deleted.join(', ') : 'Ninguno'}\n`
-  msg += `⏳ Activos: ${skipped.length ? skipped.join(', ') : 'Ninguno'}`
+  let msg = `🧹 *Sub-Bots Cleanup*\n\n`
+  msg += `✅ Deleted: ${deleted.length ? deleted.join(', ') : 'None'}\n`
+  msg += `⏳ Active: ${skipped.length ? skipped.join(', ') : 'None'}`
 
   await conn.reply(m.chat, msg, m)
 }
